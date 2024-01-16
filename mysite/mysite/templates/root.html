@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing_v2</title>
+    <style>
+        body {
+            background-color: #333; 
+            color: #fff; 
+            font-family: Arial, sans-serif; 
+            padding: 20px; 
+            text-align: center; 
+        }
+
+        h1 {
+            color: #ffd700; 
+        }
+
+        a {
+            text-decoration: none; 
+        }
+
+        button {
+            background-color: #555; 
+            color: #fff; 
+            padding: 10px 20px;
+            margin: 10px;
+            border: none; 
+            cursor: pointer; 
+            border-radius: 5px; 
+        }
+
+        button:hover {
+            background-color: #777; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Pricing_v2!</h1>
+    <a href="{% url 'admin:login' %}"><button>Go to Admin Portal</button></a>
+    <a href="{% url 'pricing_api:calculate_pricing' %}"><button>Calculate Price API</button></a>
+</body>
+</html>

@@ -16,10 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from django.views.generic.base import RedirectView
+from django.views.generic.base import RedirectView, TemplateView
+from .views import root
 
 urlpatterns = [
-    path("pricing/", include("pricing.urls")),
-     path('', RedirectView.as_view(url='/admin/login/')),
-    path("admin/", admin.site.urls),
+    path('', TemplateView.as_view(template_name='root.html'), name='root'),
+    path('pricing/', include('pricing.urls')),
+    path('admin/', admin.site.urls),
+    path('calculate/', include('pricing_api.urls', namespace='pricing_api')),  # Use the namespace
 ]
